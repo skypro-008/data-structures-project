@@ -29,6 +29,7 @@ class TestStack(unittest.TestCase):
         """
         stack = Stack()
         stack.push("test")
-        self.assertEqual(stack.top.data, "test")
+        stack.push("test2")
+        self.assertEqual(stack.top.data, "test2")
         stack.pop()
-        self.assertNotEqual(stack.top.data, "test")
+        self.assertEqual(stack.pop(), "test")

@@ -27,6 +27,13 @@ class TestStack(unittest.TestCase):
         with self.assertRaises(AttributeError):
             self.stack.top.next_node.next_node.next_node.data
 
+    def test_pop(self):
+        result_1 = self.stack.pop()
+        self.assertEqual(self.stack.top.data, 'data2')
+        self.assertEqual(result_1, 'data3')
+        result_2 = self.stack.pop()
+        self.assertEqual(self.stack.top.data, 'data1')
+        self.assertEqual(result_2, 'data2')
 
 if __name__ == '__main__':
     unittest.main()

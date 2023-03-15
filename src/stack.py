@@ -36,4 +36,10 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        pass
+        if self.size == 0:
+            return 'No elements in stack'
+        result = self.top.data
+        self.top = self.top.next_node
+        self.size -= 1
+        return result
+

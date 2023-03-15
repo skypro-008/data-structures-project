@@ -19,6 +19,9 @@ class Stack:
         self.top = None
         self.stackk = []
 
+    def __str__(self):
+        return f"{self.top}"
+
     def push(self, data):
         """
         Метод для добавления элемента на вершину стека

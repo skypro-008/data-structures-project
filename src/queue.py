@@ -17,7 +17,7 @@ class Queue:
     def __init__(self):
         """Конструктор класса Queue"""
         self.head = None
-        self.queue = ""
+        self.queue = str()
         self.tail = None
 
     def __repr__(self):

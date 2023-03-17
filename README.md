@@ -1,4 +1,4 @@
-# Проект Модуль Datastruct
+# Проект Модуль Datastruct: Masha's edition
 
 ## Домашние задания по Python ООП
 

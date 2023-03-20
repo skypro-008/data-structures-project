@@ -15,4 +15,5 @@ class Teststack(unittest.TestCase):
         self.assertEqual(second.top, None)
         second.push('data1')
         self.assertEqual(isinstance(second.top, Node), True)
+        self.assertEqual(second.pop(), 'data1')
         self.assertEqual(second.pop(), None)

@@ -41,6 +41,12 @@ class Stack:
         self.size -= 1
         return result
 
+    def __str__(self):
+        top = self.top if self.top is None else self.top.data
+        return f'Class_name: {self.__class__.__name__}, Top of stack: {top}, Size of stack: {self.size}'
+
+
+
 
 
 

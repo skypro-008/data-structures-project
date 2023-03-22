@@ -35,3 +35,6 @@ class Stack:
             return None
         self.top = node.back_node
         return node.data
+
+    def __str__(self):
+        return f'{self.top}'

@@ -11,7 +11,7 @@ class Node:
         self.next_node = next_node
 
     def __str__(self):
-        """строковое представление"""
+        """Строковое представление"""
         if self.next_node:
             return f'{self.data}\n{self.next_node}'
         else:
@@ -23,7 +23,8 @@ class Queue:
 
     def __init__(self):
         """Конструктор класса Queue"""
-        pass
+        self.head = None
+        self.tail = None
 
     def enqueue(self, data):
         """
@@ -31,7 +32,13 @@ class Queue:
 
         :param data: данные, которые будут добавлены в очередь
         """
-        pass
+        node = Node(data)
+        if not self.head and not self.tail:
+            self.head = node
+            self.tail = node
+        else:
+            self.tail.next_node = node
+            self.tail = node
 
     def dequeue(self):
         """
@@ -43,4 +50,7 @@ class Queue:
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
-        pass
+        if self.head:
+            return str(self.head)
+        else:
+            return ''

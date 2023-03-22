@@ -1,13 +1,13 @@
 class Node:
     """Класс для узла стека"""
 
-    def __init__(self, data, next_node):
+    def __init__(self, data, back_node):
         """
         Конструктор класса Node
         :param data: данные, которые будут храниться в узле
         """
         self.data = data
-        self.next_node = next_node
+        self.next_node = back_node
 
 
 class Stack:

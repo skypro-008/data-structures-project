@@ -7,7 +7,15 @@ class Node:
 
         :param data: данные, которые будут храниться в узле
         """
-        pass
+        self.data = data
+        self.next_node = next_node
+
+    def __str__(self):
+        """строковое представление"""
+        if self.next_node:
+            return f'{self.data}\n{self.next_node}'
+        else:
+            return self.data
 
 
 class Queue:

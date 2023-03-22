@@ -2,6 +2,7 @@
 import unittest
 from src.queue import Node, Queue
 
+
 class Teststack(unittest.TestCase):
 
     def test_node(self):

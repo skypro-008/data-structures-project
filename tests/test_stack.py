@@ -18,7 +18,3 @@ class Teststack(unittest.TestCase):
         self.assertEqual(second.pop(), 'data1')
         self.assertEqual(second.pop(), None)
         self.assertEqual(str(second), 'None')
-
-
-if __name__ == '__main__':
-    unittest.main()

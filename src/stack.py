@@ -7,7 +7,7 @@ class Node:
         :param data: данные, которые будут храниться в узле
         """
         self.data = data
-        self.next_node = back_node
+        self.back_node = back_node
 
 
 class Stack:

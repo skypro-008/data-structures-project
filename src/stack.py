@@ -30,4 +30,8 @@ class Stack:
         Метод для удаления элемента с вершины стека и его возвращения
         :return: данные удаленного элемента
         """
-        pass
+        node = self.top
+        if not node:
+            return None
+        self.top = node.back_node
+        return node.data

@@ -9,7 +9,7 @@ if __name__ == '__main__':
     assert stack.top is None
 
     # pop() удаляет элемент и возвращает данные удаленного элемента
-    assert data == 'data1'
+    assert data.data == 'data1'
 
     stack = Stack()
     stack.push('data1')
@@ -20,4 +20,4 @@ if __name__ == '__main__':
     assert stack.top.data == 'data1'
 
     # данные удаленного элемента
-    assert data == 'data2'
+    assert data.data == 'data2'

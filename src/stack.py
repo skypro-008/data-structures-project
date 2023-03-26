@@ -13,6 +13,7 @@ class Node:
 
 class Stack:
     """Класс для стека"""
+    stack_data = []
 
     def __init__(self):
         """Конструктор класса Stack"""
@@ -25,8 +26,9 @@ class Stack:
 
         :param data: данные, которые будут добавлены на вершину стека
         """
+        self.stack_data.append(Node(data, self.top))
         self.top = Node(data, self.top)
-        
+
 
 
 
@@ -39,5 +41,7 @@ class Stack:
         node = self.top
         if not node:
             return None
+        index = len(self.stack_data)
+        self.stack_data.pop(index - 1)
         self.top = node.next_node
         return node

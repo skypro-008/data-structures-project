@@ -9,3 +9,10 @@ class TestStack(unittest.TestCase):
         stack_test = Stack()
         stack_test.push(node_test)
         self.assertEqual(node_test, stack_test.top.data)
+
+    def test_pop(self):
+        node_test = Node('test1', None)
+        stack_test = Stack()
+        stack_test.push(node_test)
+        sun = stack_test.pop()
+        self.assertEqual(sun.data.data, node_test.data)

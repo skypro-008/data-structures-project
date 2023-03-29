@@ -20,3 +20,14 @@ class Teststack(unittest.TestCase):
         second.enqueue('data3')
         assert str(second) == "data1\ndata2\ndata3"
         assert str(three) == ""
+
+    def test_dequeue(self):
+        four = Queue()
+        four.enqueue('data1')
+        four.enqueue('data2')
+        four.enqueue('data3')
+
+        assert four.dequeue() == 'data1'
+        assert four.dequeue() == 'data2'
+        assert four.dequeue() == 'data3'
+        assert four.dequeue() is None

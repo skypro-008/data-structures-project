@@ -12,7 +12,6 @@ class Node:
 
 class LinkedList:
     """Класс для односвязного списка"""
-
     def __init__(self):
         self.head = Node
 
@@ -28,7 +27,7 @@ class LinkedList:
             self.head = node
             return
         lastnode = self.head
-        while lastnode.next_node:
+        while (lastnode.next_node):
             lastnode = lastnode.next_node
         lastnode.next_node = node
 

@@ -12,16 +12,25 @@ class Node:
 
 class LinkedList:
     """Класс для односвязного списка"""
+
     def __init__(self):
         self.head = Node
 
     def insert_beginning(self, data: dict) -> None:
         """Принимает данные (словарь) и добавляет узел с этими данными в начало связанного списка"""
-        pass
+        node = Node(data, self.head)
+        self.head = node
 
     def insert_at_end(self, data: dict) -> None:
         """Принимает данные (словарь) и добавляет узел с этими данными в конец связанного списка"""
-        pass
+        node = Node(data)
+        if self.head is None:
+            self.head = node
+            return
+        lastnode = self.head
+        while lastnode.next_node:
+            lastnode = lastnode.next_node
+        lastnode.next_node = node
 
     def __str__(self) -> str:
         """Вывод данных односвязного списка в строковом представлении"""

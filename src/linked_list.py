@@ -1,6 +1,13 @@
 class Node:
     """Класс для узла односвязного списка"""
-    pass
+
+    def __init__(self, data=None, next_node=None):
+        """
+        Конструктор класса Node
+        :param data: данные, которые будут храниться в узле
+        """
+        self.data = data
+        self.next_node = next_node
 
 
 class LinkedList:

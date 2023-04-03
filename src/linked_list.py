@@ -12,6 +12,8 @@ class Node:
 
 class LinkedList:
     """Класс для односвязного списка"""
+    def __init__(self):
+        self.head = Node
 
     def insert_beginning(self, data: dict) -> None:
         """Принимает данные (словарь) и добавляет узел с этими данными в начало связанного списка"""

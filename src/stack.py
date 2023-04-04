@@ -1,7 +1,7 @@
 class Node:
     """Класс для узла стека"""
 
-    def __init__(self, data, next_node):
+    def __init__(self, data, next_node = None):
         """
         Конструктор класса Node:param data: данные, которые будут храниться в узле
         """
@@ -20,13 +20,16 @@ class Stack:
     def __init__(self):
         """Конструктор класса Stack"""
         self.data = []
+        self.top = None
 
     def push(self, data):
         """
         Метод для добавления элемента на вершину стека
         :param data: данные, которые будут добавлены на вершину стека
         """
-
+        new_node = Node(data)
+        new_node.next_node = self.top
+        self.top = new_node
         self.data.append(data)
 
     def pop(self):
@@ -34,11 +37,10 @@ class Stack:
         Метод для удаления элемента с вершины стека и его возвращения
         :return: данные удаленного элемента
         """
-        if len(self.data) > 0:
-            delete = self.data.pop()
-            return delete
-        elif len(self.data) == 0:
+        if self.top is None:
             return None
-
-    def top(self):
-        return f"AttributeError: 'NoneType' object has no attribute 'data'"
+        else:
+            popped_node = self.top
+            self.top = popped_node.next_node
+            self.data.pop()
+            return popped_node.data

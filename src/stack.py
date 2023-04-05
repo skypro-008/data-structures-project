@@ -31,6 +31,7 @@ class Stack:
         new_node.next_node = self.top
         self.top = new_node
         self.data.append(data)
+        return self.data
 
     def pop(self):
         """

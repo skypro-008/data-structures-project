@@ -12,6 +12,7 @@ class Node:
 
 class LinkedList:
     """Класс для односвязного списка"""
+
     def __init__(self):
         self.head = Node
 
@@ -44,3 +45,16 @@ class LinkedList:
 
         ll_string += ' None'
         return ll_string
+
+    def get_data_by_id(self, key):
+        node = self.head
+
+        while node:
+            try:
+                if node.data.get('id') == key:
+                    result = node.data
+                node = node.next_node
+            except AttributeError:
+                print("Не является словарем или нет id")
+                node = node.next_node
+        return result

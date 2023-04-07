@@ -1,6 +1,7 @@
 """Здесь надо написать тесты с использованием unittest для модуля linked_list."""
 import unittest
-from src.linked_list import Node, LinkedList
+
+from src.linked_list import LinkedList
 
 
 class Teststack(unittest.TestCase):

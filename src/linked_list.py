@@ -28,6 +28,7 @@ class LinkedList:
             self.head = node
             return
         lastnode = self.head
+
         while (lastnode.next_node):
             lastnode = lastnode.next_node
         lastnode.next_node = node

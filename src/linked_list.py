@@ -14,7 +14,7 @@ class LinkedList:
     """Класс для односвязного списка"""
 
     def __init__(self):
-        self.head = Node
+        self.head = None
 
     def insert_beginning(self, data: dict) -> None:
         """Принимает данные (словарь) и добавляет узел с этими данными в начало связанного списка"""
@@ -28,7 +28,6 @@ class LinkedList:
             self.head = node
             return
         lastnode = self.head
-
         while (lastnode.next_node):
             lastnode = lastnode.next_node
         lastnode.next_node = node
@@ -44,7 +43,7 @@ class LinkedList:
             ll_string += f' {str(node.data)} ->'
             node = node.next_node
 
-        ll_string += 'None'
+        ll_string += ' None'
         return ll_string
 
     def to_list(self) -> list:

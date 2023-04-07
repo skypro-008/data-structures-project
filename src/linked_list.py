@@ -43,7 +43,17 @@ class LinkedList:
             ll_string += f' {str(node.data)} ->'
             node = node.next_node
 
-        ll_string += ' None'
+        ll_string += 'None'
+        return ll_string
+
+    def to_list(self) -> list:
+        """Возвращает список с данными"""
+        node = self.head
+
+        ll_string = []
+        while node:
+            ll_string.append(str(node.data))
+            node = node.next_node
         return ll_string
 
     def get_data_by_id(self, key):

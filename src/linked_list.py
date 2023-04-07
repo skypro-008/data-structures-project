@@ -54,6 +54,7 @@ class LinkedList:
         while node:
             ll_string.append(str(node.data))
             node = node.next_node
+
         return ll_string
 
     def get_data_by_id(self, key):

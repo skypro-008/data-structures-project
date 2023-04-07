@@ -45,3 +45,7 @@ class Stack:
         self.stack_data.pop(index - 1)
         self.top = node.next_node
         return node
+
+    def __str__(self):
+        """Метод str класса Stack"""
+        return self.top

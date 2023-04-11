@@ -26,3 +26,12 @@ def test_stack():
 
     assert stack.pop() == 'two'
     assert stack.pop() == 'one'
+
+def test_str():
+    """тест метода __str__"""
+    stack = Stack()
+    stack.push('one')
+    stack.push('two')
+    assert str(stack) == "['one', 'two']"
+    stack.pop()
+    assert str(stack) == "['one']"

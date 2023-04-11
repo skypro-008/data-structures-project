@@ -17,6 +17,7 @@ def test_stack():
 
 
 def test_str():
+    """тест метода __str__"""
     queue = Queue()
     queue.enqueue('data1')
     queue.enqueue('data2')

@@ -16,8 +16,11 @@ if __name__ == '__main__':
     stack.push('data2')
     data = stack.pop()
 
+
     # теперь последний элемента содержит данные data1
     assert stack.top.data == 'data1'
 
     # данные удаленного элемента
     assert data == 'data2'
+
+

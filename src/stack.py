@@ -23,7 +23,8 @@ class Stack:
         self.top = None
 
     def __str__(self):
-        return ""
+        """Магический метод для строкового  представления объекта"""
+        return f'{self.data}'
 
     def push(self, data):
         """

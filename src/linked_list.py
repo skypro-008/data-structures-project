@@ -48,3 +48,33 @@ class LinkedList:
 
         ll_string += ' None'
         return ll_string[1: len(ll_string)]
+
+    def remove_first(self):
+        """Удаление данных с начала списка"""
+        if not self.head:
+            return None
+        data = self.head.data
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = self.head.next_node
+        return data
+
+    def remove_last(self):
+        """удаление данных с конца списка"""
+        if not self.head:
+            return None
+        data = self.tail.data
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+        else:
+            current = self.head
+            while current.next_node != self.tail:
+                current = current.next_node
+            current.next_node = None
+            self.tail = current
+        return data
+
+

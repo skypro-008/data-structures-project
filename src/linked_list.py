@@ -37,9 +37,9 @@ class LinkedList:
         """Принимает данные (словарь) и добавляет узел с этими данными в конец связанного списка"""
         try:
             if not isinstance(data, dict):
-                raise TypeError("Входные данные должны быть словарем")
+                raise TypeError("Данные не являются словарем ")
         except TypeError as e:
-            print(f"Ошибка ввода значения --{data}--: {e}")
+            print(f"Ошибка ввода значения : {e}")
         else:
             new_node = Node(data)
             if not self.head:
@@ -105,10 +105,10 @@ class LinkedList:
     def get_data_by_id(self, element):
         """"""
         LinkedList.to_list(self)
-
         for i in self.new_list:
             if i['id'] == element:
                 return i
+        raise NotID()
 
 
 class NotID(Exception):

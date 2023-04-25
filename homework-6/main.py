@@ -29,7 +29,7 @@ if __name__ == '__main__':
     ll.insert_at_end([1, 2, 3])
     ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
 
-    user_data = ll.get_data_by_id(3)
+    user_data = ll.get_data_by_id(2)
     # Данные не являются словарем или в словаре нет id.
     # Данные не являются словарем или в словаре нет id.
     print(user_data)

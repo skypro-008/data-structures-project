@@ -77,4 +77,14 @@ class LinkedList:
             self.tail = current
         return data
 
+    def to_list(self):
+        """Вывод данных односвязного списка в строковом представлении"""
+        node = self.head
 
+        new_list = []
+        while node:
+            new_list.append(node.data)
+            node = node.next_node
+
+
+        return new_list

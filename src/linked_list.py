@@ -78,13 +78,25 @@ class LinkedList:
         return data
 
     def to_list(self):
-        """Вывод данных односвязного списка в строковом представлении"""
+        """Вывод данных односвязного списка в виде списка"""
         node = self.head
 
-        new_list = []
+        self.new_list = []
         while node:
-            new_list.append(node.data)
+            self.new_list.append(node.data)
             node = node.next_node
 
+        return self.new_list
 
-        return new_list
+    def get_data_by_id(self, element):
+        """"""
+
+        for i in self.new_list:
+            return i
+
+
+
+
+
+
+

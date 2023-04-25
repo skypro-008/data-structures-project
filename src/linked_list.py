@@ -90,6 +90,12 @@ class LinkedList:
 
     def get_data_by_id(self, element):
         """"""
+        node = self.head
+
+        self.new_list = []
+        while node:
+            self.new_list.append(node.data)
+            node = node.next_node
 
         for i in self.new_list:
             return i

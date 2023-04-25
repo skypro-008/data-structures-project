@@ -26,8 +26,8 @@ if __name__ == '__main__':
     # работа блока try/except
     ll = LinkedList()
     ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
-    #ll.insert_at_end('idusername')
-    #ll.insert_at_end([1, 2, 3])
+    ll.insert_at_end('idusername')
+    ll.insert_at_end([1, 2, 3])
     ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
 
     user_data = ll.get_data_by_id(2)

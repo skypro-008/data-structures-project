@@ -22,7 +22,6 @@ if __name__ == '__main__':
 
     assert user_data == {'id': 3, 'username': 'mosh_s'}
 
-
     # работа блока try/except
     ll = LinkedList()
     ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
@@ -30,7 +29,7 @@ if __name__ == '__main__':
     ll.insert_at_end([1, 2, 3])
     ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
 
-    user_data = ll.get_data_by_id(2)
+    user_data = ll.get_data_by_id(3)
     # Данные не являются словарем или в словаре нет id.
     # Данные не являются словарем или в словаре нет id.
     print(user_data)

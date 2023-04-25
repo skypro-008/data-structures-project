@@ -4,16 +4,17 @@ class Node:
     def __init__(self, data=None, next_node=None):
         self.data = data
         self.next_node = next_node
+
     def __str__(self):
         return self.data
 
 
 class LinkedList:
     """Класс для односвязного списка"""
+
     def __init__(self):
         self.head = None
         self.tail = None
-
 
     def insert_beginning(self, data: dict) -> None:
         """Принимает данные (словарь) и добавляет узел с этими данными в начало связанного списка"""
@@ -110,14 +111,9 @@ class LinkedList:
                 return i
 
 
-
 class NotID(Exception):
     def __init__(self, *args, **kwargs):
         self.message = args[0] if args else 'Нет ID в списке.'
 
     def __str__(self):
         return self.message
-
-
-
-

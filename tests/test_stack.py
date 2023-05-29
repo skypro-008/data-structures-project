@@ -12,7 +12,7 @@ class TestStack(unittest.TestCase):
         self.assertEqual(n1.next_node, None)
         self.assertEqual(n2.next_node, n1)
 
-    def test_stack(self):
+    def test_stack_push(self):
         stack = Stack()
         stack.push('data1')
         stack.push('data2')
@@ -22,6 +22,18 @@ class TestStack(unittest.TestCase):
 
         with self.assertRaises(AttributeError):
             stack.top.next_node.next_node.data
+
+    def test_stack_pop(self):
+        stack = Stack()
+        self.assertIsNone(stack.pop())
+        stack.push('data1')
+        self.assertEqual(stack.pop(), 'data1')
+        self.assertIsNone(stack.top)
+        stack.push('data1')
+        stack.push('data2')
+        self.assertEqual(stack.pop(), 'data2')
+        self.assertEqual(stack.top.data, 'data1')
+
 
 
 if __name__ == '__main__':

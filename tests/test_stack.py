@@ -17,16 +17,32 @@ class StackTestCase(unittest.TestCase):
         stack.push('data1')
         stack.push('data2')
         stack.push('data3')
-        self.assertEqual(stack.top.data, 'data3')
-        self.assertEqual(stack.top.next_node.data, 'data2')
-        self.assertEqual(stack.top.next_node.next_node.data, 'data1')
-        self.assertIsNone(stack.top.next_node.next_node.next_node)
+        stack.push('data4')
+
+        self.assertEqual(stack.top.data, 'data4')
+        self.assertEqual(stack.top.next_node.data, 'data3')
+        self.assertEqual(stack.top.next_node.next_node.data, 'data2')
+        self.assertEqual(stack.top.next_node.next_node.next_node.data, 'data1')
+        self.assertIsNone(stack.top.next_node.next_node.next_node.next_node)
 
     def test_stack_push_single(self):
         stack = Stack()
         stack.push('data')
         self.assertEqual(stack.top.data, 'data')
         self.assertIsNone(stack.top.next_node)
+
+    def test_pop_non_empty_stack(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+
+        data = stack.pop()
+        self.assertEqual(data, 'data2')
+        self.assertEqual(stack.top.data, 'data1')
+
+        data = stack.pop()
+        self.assertEqual(data, 'data1')
+        self.assertIsNone(stack.top)
 
 
 if __name__ == '__main__':

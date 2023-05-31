@@ -31,3 +31,12 @@ class Stack:
         else:
             new_node.next_node = self.top
             self.top = new_node
+
+    def pop(self):
+        """Метод возвращает элемент с вершины, удаляя его из стека"""
+        if self.top is None:
+            return None
+        data = self.top.data
+        self.top = self.top.next_node
+
+        return data

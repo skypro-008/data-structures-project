@@ -19,6 +19,17 @@ class Stack:
         """Конструктор класса Stack"""
         self.top = None
 
+    def __str__(self):
+        """Возвращает строковое представление стека"""
+        return self._str_recursive(self.top)
+
+    def _str_recursive(self, current_node):
+        """Рекурсивная функция для формирования строки из узлов стека"""
+        if current_node is None:
+            return ""
+        else:
+            return f"{current_node.data} -> {self._str_recursive(current_node.next_node)}"
+
     def push(self, data):
         """
         Метод для добавления элемента на вершину стека
@@ -40,3 +51,6 @@ class Stack:
         self.top = self.top.next_node
 
         return data
+
+
+

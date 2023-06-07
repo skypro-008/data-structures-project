@@ -1,7 +1,7 @@
 class Node:
     """Класс для узла очереди"""
 
-    def __init__(self, data,):
+    def __init__(self, data):
         """Конструктор класса Node"""
         self.data = data
         self.next_node = None

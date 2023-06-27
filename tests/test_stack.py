@@ -38,3 +38,9 @@ def test_stack_pop(empty_stack):
     empty_stack.push('data1')
     empty_stack.push('data2')
     assert empty_stack.pop() == 'data2'
+
+
+def test_stack_str(empty_stack):
+    empty_stack.push('data1')
+    empty_stack.push('data2')
+    assert empty_stack.__str__() == 'data2\ndata1'

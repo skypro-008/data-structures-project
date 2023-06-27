@@ -13,10 +13,10 @@ if __name__ == '__main__':
 
     # Проверяем очередность хранения данных
     assert queue.head.data == 'data1'
-    assert queue.head.top.data == 'data2'
+    assert queue.head.next_node.data == 'data2'
     assert queue.tail.data == 'data3'
-    assert queue.tail.top is None
-    print(queue.tail.top.data)  # AttributeError: 'NoneType' object has no attribute 'data'
+    assert queue.tail.next_node is None
+    print(queue.tail.next_node.data)  # AttributeError: 'NoneType' object has no attribute 'data'
 
     # Проверяем магический метод __str__
     assert str(queue) == "data1\ndata2\ndata3"

@@ -10,6 +10,9 @@ class Node:
         self.data = data
         self.next_node = next_node
 
+    def __str__(self):
+        return self.data
+
 
 class Stack:
     """Класс для стека"""
@@ -17,6 +20,15 @@ class Stack:
     def __init__(self):
         """Конструктор класса Stack"""
         self.top = None
+
+    def __str__(self):
+        return "" if self.top is None else "\n".join([str(item) for item in self])
+
+    def __iter__(self):
+        current = self.top
+        while current is not None:
+            yield current
+            current = current.next_node
 
     def push(self, data):
         """
@@ -33,6 +45,7 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        removed_node = self.top
-        self.top = self.top.next_node
-        return removed_node.data
+        if self.top:
+            removed_node = self.top
+            self.top = self.top.next_node
+            return removed_node.data

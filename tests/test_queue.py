@@ -32,9 +32,9 @@ def test_queue_enqueue(empty_queue):
     empty_queue.enqueue('data2')
     empty_queue.enqueue('data3')
     assert empty_queue.head.data == 'data1'
-    assert empty_queue.head.top.data == 'data2'
+    assert empty_queue.head.next_node.data == 'data2'
     assert empty_queue.tail.data == 'data3'
-    assert empty_queue.tail.top is None
+    assert empty_queue.tail.next_node is None
 
 
 def test_queue_str(empty_queue):

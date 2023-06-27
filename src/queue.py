@@ -9,11 +9,10 @@ class Node:
         """
         self.data = data
         self.next_node = next_node
-        self.top = None
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
-        
+
         return self.data
 
 
@@ -32,7 +31,7 @@ class Queue:
         current = self.head
         while current is not None:
             yield current
-            current = current.top
+            current = current.next_node
 
     def enqueue(self, data):
         """
@@ -46,8 +45,8 @@ class Queue:
             self.head = new_node
             self.tail = new_node
         else:
-            new_node = Node(data=data, next_node=self.tail)
-            self.tail.top = new_node
+            new_node = Node(data=data, next_node=None)
+            self.tail.next_node = new_node
             self.tail = new_node
 
     def dequeue(self):

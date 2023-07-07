@@ -43,3 +43,14 @@ def test_queue_str(empty_queue):
     empty_queue.enqueue('data2')
     empty_queue.enqueue('data3')
     assert str(empty_queue) == """data1\ndata2\ndata3"""
+
+
+def test_queue_dequeue(empty_queue):
+    empty_queue.enqueue('data1')
+    empty_queue.enqueue('data2')
+    empty_queue.enqueue('data3')
+
+    assert empty_queue.dequeue() == 'data1'
+    assert empty_queue.dequeue() == 'data2'
+    assert empty_queue.dequeue() == 'data3'
+    assert empty_queue.dequeue() is None

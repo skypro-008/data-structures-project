@@ -20,6 +20,9 @@ class Stack:
     def __init__(self):
         self.top = None
 
+    def __str__(self):
+        return str(self.top)
+
     def push(self, data):
         new_node = Node(data, self.top)
         self.top = new_node

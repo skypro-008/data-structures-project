@@ -1,9 +1,8 @@
 import unittest
-from src.stack import Node, Stack
+from src.stack import Stack
 """Здесь надо написать тесты с использованием unittest для модуля stack."""
 
 class StackTest(unittest.TestCase):
-    stack = Stack()
     def test_push(self):
       stack = Stack()
       stack.push('data1')
@@ -26,6 +25,17 @@ class StackTest(unittest.TestCase):
         self.assertEqual(stack.top.data, 'data1')
         data = stack.pop()
         self.assertEqual(data, 'data1')
+
+    def test_str(self):
+        stack = Stack()
+        self.assertEqual(str(stack), 'None')
+
+    def test_init(self):
+        stack = Stack()
+        self.assertIsNone(stack.top)
+
+
+
 
 
 

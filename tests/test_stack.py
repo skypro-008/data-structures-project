@@ -2,6 +2,7 @@
 import unittest
 from src.stack import Stack
 
+
 class StackTest(unittest.TestCase):
     def test_push_single_element(self):
         stack = Stack()
@@ -43,6 +44,7 @@ class StackTest(unittest.TestCase):
         self.assertEqual(result2, 2)
         self.assertEqual(result3, 1)
         self.assertIsNone(stack.top)
+
 
 if __name__ == '__main__':
     unittest.main()

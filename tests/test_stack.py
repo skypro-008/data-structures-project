@@ -19,5 +19,30 @@ class StackTest(unittest.TestCase):
         self.assertEqual(stack.top.next_node.next_node.data, 1)
         self.assertIsNone(stack.top.next_node.next_node.next_node)
 
+    def test_pop_empty_stack(self):
+        stack = Stack()
+        with self.assertRaises(IndexError):
+            stack.pop()
+
+    def test_pop_single_element_stack(self):
+        stack = Stack()
+        stack.push(1)
+        result = stack.pop()
+        self.assertEqual(result, 1)
+        self.assertIsNone(stack.top)
+
+    def test_pop_multiple_elements_stack(self):
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        result1 = stack.pop()
+        result2 = stack.pop()
+        result3 = stack.pop()
+        self.assertEqual(result1, 3)
+        self.assertEqual(result2, 2)
+        self.assertEqual(result3, 1)
+        self.assertIsNone(stack.top)
+
 if __name__ == '__main__':
     unittest.main()

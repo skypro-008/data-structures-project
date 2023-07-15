@@ -1,6 +1,7 @@
 class Node:
     """Класс для узла стека"""
 
+
     def __init__(self, data, next_node=None):
         """
         Конструктор класса Node
@@ -14,9 +15,11 @@ class Node:
 class Stack:
     """Класс для стека"""
 
+
     def __init__(self):
         """Конструктор класса Stack"""
         self.top = None
+
 
     def push(self, data):
         """
@@ -31,12 +34,13 @@ class Stack:
             new_node.next_node = self.top
             self.top = new_node
 
+
     def pop(self):
         """
         Метод для удаления верхнего элемента из стека и его возврата
         """
         if self.top is None:
-            raise IndexError("Стек пустой. Невозможно выполнить операцию 'pop'.")
+            raise IndexError("Невозможно выполнить операцию 'pop'.")
         else:
             data = self.top.data
             self.top = self.top.next_node

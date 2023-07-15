@@ -33,8 +33,11 @@ class Stack:
 
     def pop(self):
         """
-        Метод для удаления элемента с вершины стека и его возвращения
-
-        :return: данные удаленного элемента
+        Метод для удаления верхнего элемента из стека и его возврата
         """
-        pass
+        if self.top is None:
+            raise IndexError("Стек пустой. Невозможно выполнить операцию 'pop'.")
+        else:
+            data = self.top.data
+            self.top = self.top.next_node
+            return data

@@ -56,7 +56,3 @@ class StackTest(unittest.TestCase):
     def test_empty_stack_str(self):
         stack = Stack()
         self.assertEqual(str(stack), "Stack: None")
-
-
-if __name__ == '__main__':
-    unittest.main()

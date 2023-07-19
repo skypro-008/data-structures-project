@@ -21,4 +21,8 @@ if __name__ == '__main__':
 
     # данные удаленного элемента
     assert data == 'data2'
-
+    stack = Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    print(stack)

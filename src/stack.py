@@ -1,7 +1,6 @@
 class Node:
     """Класс для узла стека"""
 
-
     def __init__(self, data, next_node=None):
         """
         Конструктор класса Node
@@ -15,11 +14,18 @@ class Node:
 class Stack:
     """Класс для стека"""
 
-
     def __init__(self):
         """Конструктор класса Stack"""
         self.top = None
 
+    def __str__(self):
+        """Метод для получения строкового представления стека"""
+        current = self.top
+        stack_str = "Stack: "
+        while current is not None:
+            stack_str += str(current.data) + " -> "
+            current = current.next_node
+        return stack_str + "None"
 
     def push(self, data):
         """
@@ -33,7 +39,6 @@ class Stack:
         else:
             new_node.next_node = self.top
             self.top = new_node
-
 
     def pop(self):
         """

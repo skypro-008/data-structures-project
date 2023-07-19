@@ -45,6 +45,18 @@ class StackTest(unittest.TestCase):
         self.assertEqual(result3, 1)
         self.assertIsNone(stack.top)
 
+    def test_push_pop_and_str(self):
+        stack = Stack()
+        stack.push("A")
+        stack.push("B")
+        stack.push("C")
+        stack.pop()
+        self.assertEqual(str(stack), "Stack: B -> A -> None")
+
+    def test_empty_stack_str(self):
+        stack = Stack()
+        self.assertEqual(str(stack), "Stack: None")
+
 
 if __name__ == '__main__':
     unittest.main()

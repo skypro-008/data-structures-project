@@ -28,3 +28,12 @@ def test_push():
     assert stack_test.top.next_node.next_node.next_node is None
     with pytest.raises(AttributeError):
         stack_test.top.next_node.next_node.next_node.data
+
+
+def test_pop():
+    stack_test = stack.Stack()
+    stack_test.push('data1')
+    data = stack_test.pop()
+
+    assert stack_test.top is None
+    assert data == 'data1'

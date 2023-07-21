@@ -27,3 +27,13 @@ def test_enqueue():
     assert queue_test.head.next_node.data == 'data2'
     assert queue_test.tail.data == 'data3'
     assert queue_test.tail.next_node is None
+
+
+def test_str():
+    queue_test = queue.Queue()
+    assert str(queue.Queue()) == ""
+
+    queue_test.enqueue('data1')
+    queue_test.enqueue('data2')
+    queue_test.enqueue('data3')
+    assert str(queue_test) == "data1\ndata2\ndata3"

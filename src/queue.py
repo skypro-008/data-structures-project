@@ -23,8 +23,6 @@ class Queue:
     def enqueue(self, data):
         """
         Метод для добавления элемента в очередь
-
-        :param data: данные, которые будут добавлены в очередь
         """
         new_node = Node(data)
         if self.tail is None:
@@ -37,10 +35,19 @@ class Queue:
     def dequeue(self):
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
-
-        :return: данные удаленного элемента
         """
-        pass
+        if self.head is None:
+            # Очередь пуста, возвращаем None
+            return None
+
+        data = self.head.data
+        self.head = self.head.next_node
+
+        # Если очередь стала пустой после удаления элемента, обнуляем хвост тоже
+        if self.head is None:
+            self.tail = None
+
+        return data
 
     def __str__(self):
         """

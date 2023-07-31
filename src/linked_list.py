@@ -13,8 +13,8 @@ class LinkedList:
         self.head = None
         self.tail = None
 
-    def insert_beginning(self, data: dict) -> None:
-        """Принимает данные (словарь) и добавляет узел с этими данными в начало связанного списка"""
+    def insert_beginning(self, data) -> None:
+        """Принимает данные и добавляет узел с этими данными в начало связанного списка"""
         new_node = Node(data)
         if not self.head:
             self.head = new_node
@@ -23,8 +23,8 @@ class LinkedList:
             new_node.next_node = self.head
             self.head = new_node
 
-    def insert_at_end(self, data: dict) -> None:
-        """Принимает данные (словарь) и добавляет узел с этими данными в конец связанного списка"""
+    def insert_at_end(self, data) -> None:
+        """Принимает данные и добавляет узел с этими данными в конец связанного списка"""
         new_node = Node(data)
         if not self.head:
             self.head = new_node
@@ -46,3 +46,29 @@ class LinkedList:
 
         ll_string += 'None'
         return ll_string
+
+    def to_list(self):
+        """Возвращает список с данными, содержащимися в односвязном списке LinkedList"""
+        result = []
+        current_node = self.head
+        while current_node:
+            result.append(current_node.data)
+            current_node = current_node.next_node
+        return result
+
+    def get_data_by_id(self, target_id):
+        """Возвращает первый найденный в LinkedList словарь с ключом 'id',
+        значение которого равно переданному в метод значению"""
+        try:
+            self.target_id = int(target_id)
+        except (TypeError, ValueError):
+            print("Ошибка: Неподходящий формат данных. Ожидается числовое значение 'id'.")
+            return None
+        current_node = self.head
+        while current_node:
+            if isinstance(current_node.data, dict) and 'id' in current_node.data \
+                    and current_node.data['id'] == target_id:
+                return current_node.data
+            current_node = current_node.next_node
+        print(f"Запись с 'id' = {target_id} не найдена.")
+        return None

@@ -18,3 +18,26 @@ def test_stack():
     assert stack.top.data == "data3", "Неверно сохранён верхний элемент стека"
     assert stack.top.next_node.next_node.data == "data1", "Неверно сохранена последовательность стека"
     assert stack.top.next_node.next_node.next_node is None
+
+
+def test_pop():
+    stack = Stack()
+    stack.push('data1')
+    data = stack.pop()
+
+    # стек стал пустой
+    assert stack.top is None
+
+    # pop() удаляет элемент и возвращает данные удаленного элемента
+    assert data == 'data1'
+
+    stack = Stack()
+    stack.push('data1')
+    stack.push('data2')
+    data = stack.pop()
+
+    # теперь последний элемента содержит данные data1
+    assert stack.top.data == 'data1'
+
+    # данные удаленного элемента
+    assert data == 'data2'

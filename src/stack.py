@@ -1,13 +1,4 @@
-class Node:
-    """Класс для узла стека"""
-
-    def __init__(self, data, next_node):
-        """
-        Конструктор класса Node
-
-        :param data: данные, которые будут храниться в узле
-        """
-        pass
+from src.node import Node
 
 
 class Stack:
@@ -15,7 +6,7 @@ class Stack:
 
     def __init__(self):
         """Конструктор класса Stack"""
-        pass
+        self.top = None
 
     def push(self, data):
         """
@@ -23,7 +14,7 @@ class Stack:
 
         :param data: данные, которые будут добавлены на вершину стека
         """
-        pass
+        self.top = Node(data, self.top)
 
     def pop(self):
         """
@@ -31,4 +22,21 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        pass
+        data = self.top.data
+        self.top = self.top.next_node
+        return data
+
+    def count(self):
+        """функция счета количества элементов стека"""
+
+        count = 0
+        try:
+            node = self.top.next_node
+            while True:
+                count += 1
+                node = node.next_node
+        except AttributeError:
+            return count
+
+    def __str__(self):
+        return f'Stack. Количество элементов - {self.count()}'

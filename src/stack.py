@@ -39,3 +39,4 @@ class Stack:
         remove = Node(data, new_top)
         self.top = new_top
         return remove
+

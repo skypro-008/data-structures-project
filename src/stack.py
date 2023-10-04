@@ -45,4 +45,11 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        pass
+        if self.top is None:
+            return None
+        pop_data = self.top
+        next_data = self.next_node
+        self.top = self.next_node
+        if next_data is not None:
+            self.next_node = next_data.next_node
+        return pop_data.data

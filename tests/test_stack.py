@@ -5,6 +5,7 @@ from src.stack import Node, Stack
 
 class TestCls(unittest.TestCase):
     ''' Тестовые ситуации '''
+
     def test_node(self):
         ''' проверить Node '''
         node1 = Node(5, None)
@@ -14,9 +15,8 @@ class TestCls(unittest.TestCase):
         self.assertEqual(node1.next_node, None)
         self.assertEqual(node2.next_node, node1)
 
-
-    def test_stack(self):
-        ''' Проверить Stack '''
+    def test_stack_push(self):
+        ''' Проверить Stack Push '''
         stack = Stack()
         stack.push('test1')
         stack.push('test2')
@@ -28,3 +28,14 @@ class TestCls(unittest.TestCase):
         with self.assertRaises(AttributeError):
             self.assertEqual(stack.top.next_node.next_node.next_node.data, 'test1')
             # AttributeError: 'NoneType' object has no attribute 'data'
+
+    def test_stack_pop(self):
+        ''' Проверить Stack Pop '''
+        stack = Stack()
+        stack.push('test1')
+        stack.push('test2')
+        top_data = stack.pop()
+        self.assertEqual(top_data, 'test2')
+        next_data = stack.pop()
+        self.assertEqual(next_data, 'test1')
+        self.assertEqual(stack.next_node, None)

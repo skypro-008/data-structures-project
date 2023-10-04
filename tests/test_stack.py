@@ -16,7 +16,7 @@ class TestCls(unittest.TestCase):
         self.assertEqual(node2.next_node, node1)
 
     def test_stack_push(self):
-        ''' Проверить Stack Push '''
+        ''' Проверить Stack Push  '''
         stack = Stack()
         stack.push('test1')
         stack.push('test2')

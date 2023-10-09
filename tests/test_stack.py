@@ -47,5 +47,5 @@ class TestCls(unittest.TestCase):
         stack.push('Test1')
         self.assertEqual(str(stack), "'Test1' -> None")
         stack.push('Test2')
-        stack.push('Test3')
-        self.assertEqual(str(stack), "'Test3' -> 'Test2'")
+        stack.push('Test4')
+        self.assertEqual(str(stack), "'Test4' -> 'Test2'")

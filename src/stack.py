@@ -55,6 +55,7 @@ class Stack:
         return pop_data.data
 
     def __str__(self):
+        ''' Представление '''
         if self.top is not None and self.next_node is not None:
             return f"'{self.top.data}' -> '{self.next_node.data}'"
         elif self.top is not None and self.next_node is None:

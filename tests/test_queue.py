@@ -31,10 +31,12 @@ class TestCls(unittest.TestCase):
         queue.enqueue('data1')
         queue.enqueue('data2')
         queue.enqueue('data3')
+
         # Проверяем очередность хранения данных
         assert queue.head.data == 'data1'
         assert queue.head.next_node.data == 'data2'
         assert queue.tail.data == 'data3'
         assert queue.tail.next_node is None
-        print(queue.tail.next_node.data)
+        with self.assertRaises(AttributeError):
+            print(queue.tail.next_node.data)
         # AttributeError: 'NoneType' object has no attribute 'data'

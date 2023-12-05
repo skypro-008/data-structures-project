@@ -10,6 +10,12 @@ packages = [{include = "data_structures_project"}]
 python = "^3.11"
 
 
+[tool.poetry.group.lint.dependencies]
+black = "^23.11.0"
+mypy = "^1.7.1"
+flake8 = "^6.1.0"
+isort = "^5.12.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

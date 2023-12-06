@@ -23,10 +23,17 @@ def test_stack_init(stack):
     assert stack.top is None
 
 
-def test_stack_str(stack):
+def test_stack_str():
+    stack = Stack()
+    assert str(stack) == ""
     stack.push("data1")
+    assert str(stack) == "data1"
     stack.push("data2")
     assert str(stack) == "data2"
+    stack.pop()
+    assert str(stack) == "data1"
+    stack.pop()
+    assert str(stack) == ""
 
 
 def test_stack_push(stack):
@@ -37,13 +44,40 @@ def test_stack_push(stack):
     assert stack.top.next_node.data == "data2"
 
 
-def test_stack_pop_not_empty(stack):
+def test_push_and_pop():
+    stack = Stack()
     stack.push("data1")
     stack.push("data2")
-    stack.pop()
+    data = stack.pop()
+    assert data == "data2"
+    data = stack.pop()
+    assert data == "data1"
 
-    assert stack.top.data == "data1"
+
+def test_pop_empty_stack():
+    stack = Stack()
+    data = stack.pop()
+    assert data is None
+    assert stack.top is None
 
 
-def test_stack_pop_empty(stack):
-    assert stack.pop() is None
+def test_pop_from_non_empty_stack():
+    stack = Stack()
+    stack.push("data1")
+    data = stack.pop()
+    assert data == "data1"
+    assert stack.top is None
+
+
+def test_push_and_pop_multiple_elements():
+    stack = Stack()
+    stack.push("data1")
+    stack.push("data2")
+    stack.push("data3")
+    data = stack.pop()
+    assert data == "data3"
+    data = stack.pop()
+    assert data == "data2"
+    data = stack.pop()
+    assert data == "data1"
+    assert stack.top is None

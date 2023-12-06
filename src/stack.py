@@ -19,7 +19,9 @@ class Stack:
         self.top = None
 
     def __str__(self):
-        return self.top.data
+        if self.top is not None:
+            return str(self.top.data)
+        return ""
 
     def push(self, data):
         """

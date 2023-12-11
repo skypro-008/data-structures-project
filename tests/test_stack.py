@@ -81,3 +81,8 @@ def test_push_and_pop_multiple_elements():
     data = stack.pop()
     assert data == "data1"
     assert stack.top is None
+
+
+def test_str_stack():
+    new_stack = Stack()
+    assert print(new_stack) is None
